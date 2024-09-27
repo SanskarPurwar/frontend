@@ -33,4 +33,8 @@
 .dis_inline {
     display: inline;
     margin: 0px;
+    padding-top: 2px;
+}
+.font_grey{
+    color: gray
 }

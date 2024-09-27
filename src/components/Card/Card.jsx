@@ -26,7 +26,7 @@ function Card({ticket}){
         <>
          <div className="ticket_card">
             <div className="flex_between">
-                <p className="dis_inline">{ticket.id}</p>
+                <p className="dis_inline font_grey">{ticket.id}</p>
                 {/* <img src={Display} alt="" /> */}
             </div>
 
@@ -35,7 +35,7 @@ function Card({ticket}){
                <p className="dis_inline text_wrap">{ticket.title}</p>
             </div>
 
-            <div className="flex_gap">
+            <div className="flex_gap font_grey">
                <img src={Priorities[ticket.priority]} alt="" />
                <p className="dis_inline">{ticket.tag[0]}</p>
             </div>
