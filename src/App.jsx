@@ -7,8 +7,9 @@ import './App.css'
 function App() {
   const [tickets, setTickets] = useState([]);
   const [users, setUsers] = useState([]);
-  const [grouping, setGrouping] = useState("status"); // Default grouping is by status
-  const [ordering, setOrdering] = useState("title"); // Default ordering is by title
+  const [grouping, setGrouping] = useState("status"); 
+  const [ordering, setOrdering] = useState("title"); 
+  
   console.log("grouping", grouping);
   console.log(ordering);
 

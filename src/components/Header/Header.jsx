@@ -7,8 +7,11 @@ function Header({ onGroupingChange, onOrderingChange }) {
 
 
     const [openDisplay, setOpenDisplay] = useState(false);
-    const [errorFetchingData, setErrorFetchingData] = useState(null);
+    const [grouping ,setGrouping] = useState("status")
+    const [ordering , setOrdering] = useState("title")
+
     const handleGroupingChange = (e) => {
+        setGrouping(e.target.value)
         onGroupingChange(e.target.value);
     };
 
@@ -34,17 +37,17 @@ function Header({ onGroupingChange, onOrderingChange }) {
                     <div className="dropdown-section">
                         <label>Grouping : </label>
                         <select name="grouping" onChange={handleGroupingChange}>
-                            <option value="status">Status</option>
-                            <option value="priority">Priority</option>
-                            <option value="user">User</option>
+                            <option value="status" selected={grouping==='status'} >Status</option>
+                            <option value="priority" selected={grouping  === 'priority'}>Priority</option>
+                            <option value="user" selected={grouping === 'user'}>User</option>
                         </select>
                     </div>
 
                     <div className="dropdown-section">
                         <label>Ordering</label>
                         <select name="ordering" onChange={handleOrderingChange}>
-                            <option value="title">Title</option>
-                            <option value="priority">Priority</option>
+                            <option value="title" selected={ordering === 'title'}>Title</option>
+                            <option value="priority" selected={ordering === 'priority'}>Priority</option>
                         </select>
                     </div>
                 </div>
