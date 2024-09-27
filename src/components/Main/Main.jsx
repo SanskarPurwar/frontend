@@ -1,13 +1,42 @@
 import Card from ".././Card/Card.jsx";
 import "./Main.css"
+import Dot3 from "../../assets/3 dot menu.svg"
+import add from "../../assets/add.svg"
+import cancelled from '../../assets/Cancelled.svg'
+import Done from '../../assets/Done.svg'
+import InProgress from '../../assets/in-progress.svg'
+import Todo from '../../assets/To-do.svg'
+import Backlog from '../../assets/Backlog.svg'
+import High from '../../assets/Img - High Priority.svg'
+import Medium from '../../assets/Img - Medium Priority.svg'
+import Low from '../../assets/Img - Low Priority.svg'
+import NoPriority from '../../assets/No-priority.svg'
+import Urgent from '../../assets/SVG - Urgent Priority colour.svg'
+
+
+
 function Main({ tickets, users, grouping, ordering }) {
 
-    const statuses = ["Todo", "In progress", "Done", "Canceled", "Backlog"];
+    const statuses = ["Todo", "In progress", "Done", "Cancelled", "Backlog"];
+    const status_img = {
+        "Todo" : Todo,
+        "In progress" : InProgress,
+        "Done" : Done,
+        "Cancelled" :  cancelled ,
+        "Backlog" : Backlog
+    }
+
+    const priority_img = {
+        "Urgent" : Urgent,
+        "High": High,
+        "Medium": Medium,
+        "Low": Low,
+        "No Priority": NoPriority
+    }
 
     const groupTickets = (tickets, grouping) => {
         switch (grouping) {
             case "status":
-                // Group tickets by status, ensuring all statuses are present even if empty
                 return statuses.reduce((acc, status) => {
                     acc[status] = tickets.filter(ticket => ticket.status === status);
                     return acc;
@@ -21,7 +50,6 @@ function Main({ tickets, users, grouping, ordering }) {
                     "No Priority": tickets.filter(ticket => ticket.priority === 0),
                 };
             case "user":
-                // Map userId from tickets to user names from the users array
                 return groupByUser(tickets, users);
             default:
                 return {};
@@ -36,7 +64,7 @@ function Main({ tickets, users, grouping, ordering }) {
         users.forEach(user => {
             userMap[user.id] = {
                 name: user.name,
-                tickets: [] // Empty array for each user
+                tickets: []
             };
         });
 
@@ -65,12 +93,31 @@ function Main({ tickets, users, grouping, ordering }) {
     // Get grouped tickets based on the selected grouping option
     const groupedTickets = groupTickets(tickets, grouping);
 
-
     return (
         <div className="board-container">
             {Object.keys(groupedTickets).map(group => (
                 <div key={group} className="board-column">
-                    <h3>{grouping === "user" ? groupedTickets[group].name : group}</h3>
+
+                    <div className="flex_around">
+                        <div id="flex_gap">
+                            { grouping === "status" && 
+                            <img src={status_img[group]} alt="" /> }
+
+                            {
+                                grouping === "priority" && 
+                                <img src={priority_img[group]} alt="" />
+                            } 
+
+                            <h3>{grouping === "user" ? groupedTickets[group].name : group}</h3>
+
+                        </div>
+                        <div>
+                            <img src={add} alt="" />
+                            <img src={Dot3} alt="" />
+                        </div>
+                    </div>
+
+                    
                     <div className="tickets-container">
                         {Array.isArray(groupedTickets[group]) ? (
                             groupedTickets[group].length > 0 ? (

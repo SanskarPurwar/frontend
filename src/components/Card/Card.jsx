@@ -6,8 +6,10 @@ import Low from "../../assets/Img - Low Priority.svg"
 import High from "../../assets/Img - High Priority.svg"
 import Medium from "../../assets/Img - Medium Priority.svg"
 import Urgent from "../../assets/SVG - Urgent Priority grey.svg";
-
-import Backlog from "../../assets/Backlog.svg";
+import cancelled from '../../assets/Cancelled.svg'
+import InProgress from '../../assets/in-progress.svg'
+import Todo from '../../assets/To-do.svg'
+import Backlog from '../../assets/Backlog.svg'
 
 import './card.css'
 
@@ -21,17 +23,21 @@ function Card({ticket}){
         4: Urgent
     }
 
+    const status_img = {
+        "Todo" : Todo,
+        "In progress" : InProgress,
+        "Done" : Done,
+        "Cancelled" :  cancelled ,
+        "Backlog" : Backlog
+    }
 
     return (
         <>
          <div className="ticket_card">
-            <div className="flex_between">
-                <p className="dis_inline font_grey">{ticket.id}</p>
-                {/* <img src={Display} alt="" /> */}
-            </div>
+            <p className="dis_inline font_grey">{ticket.id}</p>
 
             <div className="flex_gap">
-               <img src={Done} alt="" />
+               <img src={status_img[ticket.status]} alt="" />
                <p className="dis_inline text_wrap">{ticket.title}</p>
             </div>
 
