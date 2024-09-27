@@ -1,0 +1,25 @@
+.ticket_card {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 16px;
+    font-size: smaller;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+}
+.flex_between {
+    display: flex;
+    justify-content: space-between;
+}
+.flex_gap{
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+}
+.text_wrap {
+    text-wrap: wrap;
+}
+.dis_inline {
+    display: inline;
+    margin: 0px;
+}
