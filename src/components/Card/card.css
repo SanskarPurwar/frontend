@@ -6,6 +6,7 @@
     font-size: smaller;
     height: 80px;
     width: 80%;
+    border-radius: 6px;
     background-color: rgb(255, 255, 255);
 }
 .flex_between {
