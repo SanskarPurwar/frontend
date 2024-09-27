@@ -1,0 +1,19 @@
+.board-container{
+    display: flex;
+    gap: 40px;
+    justify-content: space-between;
+    box-sizing: border-box;
+    height: 100vh;
+    background-color: rgb(235, 241, 243);
+}
+
+.board-column {
+    flex: 1;
+    margin: 0 10px;
+}
+
+.tickets-container {
+    display:flex;
+    flex-direction: column;
+    gap: 8px;
+}
