@@ -107,8 +107,9 @@ function Main({ tickets, users, grouping, ordering }) {
                                 grouping === "priority" && 
                                 <img src={priority_img[group]} alt="" />
                             } 
-
                             <h3>{grouping === "user" ? groupedTickets[group].name : group}</h3>
+
+                            <span>{ grouping === "user" ? groupedTickets[group].tickets.length :groupedTickets[group].length}</span>
 
                         </div>
                         <div>

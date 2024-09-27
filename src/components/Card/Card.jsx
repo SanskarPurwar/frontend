@@ -38,7 +38,7 @@ function Card({ticket}){
 
             <div className="flex_gap">
                <img src={status_img[ticket.status]} alt="" />
-               <p className="dis_inline text_wrap">{ticket.title}</p>
+               <p className="text_wrap">{ticket.title}</p>
             </div>
 
             <div className="flex_gap font_grey">

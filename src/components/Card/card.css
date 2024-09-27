@@ -19,16 +19,15 @@
     align-items: flex-start;
 }
 .text_wrap {
-    display: -webkit-box;
+    display: -webkit-inline-box;
     -webkit-line-clamp: 2;       
-    line-clamp: 2;               
+     line-clamp: 2;               
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: normal;
-}
-
-  
+    margin: 0px;
+}   
   
 .dis_inline {
     display: inline;
