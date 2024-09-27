@@ -4,7 +4,8 @@
     gap: 15px;
     padding: 16px;
     font-size: smaller;
-    width: 100%;
+    height: 100px;
+    width: 80%;
     background-color: rgb(255, 255, 255);
 }
 .flex_between {
@@ -13,12 +14,21 @@
 }
 .flex_gap{
     display: flex;
-    gap: 8px;
+    gap: 5px;
     align-items: flex-start;
 }
 .text_wrap {
-    text-wrap: wrap;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;       
+    line-clamp: 2;               
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
 }
+
+  
+  
 .dis_inline {
     display: inline;
     margin: 0px;

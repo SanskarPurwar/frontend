@@ -78,7 +78,7 @@ function Main({ tickets, users, grouping, ordering }) {
                                     <Card key={ticket.id} ticket={ticket} />
                                 ))
                             ) : (
-                                <p>No tickets</p>
+                                <p></p>
                             )
                         ) : (
                             groupedTickets[group].tickets.length > 0 ? (
@@ -86,7 +86,7 @@ function Main({ tickets, users, grouping, ordering }) {
                                     <Card key={ticket.id} ticket={ticket} />
                                 ))
                             ) : (
-                                <p>No tickets</p>
+                                <p></p>
                             )
                         )}
                     </div>

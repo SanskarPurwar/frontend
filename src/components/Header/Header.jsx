@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Display from '../../assets/Display.svg'
 import down from '../../assets/down.svg'
+import './Header.css'
 
 function Header({ onGroupingChange, onOrderingChange }) {
 
